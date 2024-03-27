@@ -61,3 +61,7 @@ th {
   width: 80px;
   text-align: center;
 }
+
+tr:hover {
+  background-color: yellow;
+}
