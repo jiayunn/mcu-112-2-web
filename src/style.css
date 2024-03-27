@@ -1,5 +1,6 @@
 header {
   text-align: center;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .card {
@@ -44,4 +45,9 @@ footer {
 section {
   margin: 0 auto;
   width: 90%;
+}
+
+th {
+  color: white;
+  background-color: #777777;
 }
