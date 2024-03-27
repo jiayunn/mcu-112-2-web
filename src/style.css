@@ -51,3 +51,13 @@ th {
   color: white;
   background-color: #777777;
 }
+
+.nav {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  display: block;
+  padding: 8px;
+  width: 80px;
+  text-align: center;
+}
