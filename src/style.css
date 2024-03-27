@@ -40,3 +40,8 @@ body {
 footer {
   margin-top: 20px;
 }
+
+section {
+  margin: 0 auto;
+  width: 90%;
+}
