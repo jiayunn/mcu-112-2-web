@@ -13,11 +13,14 @@ header {
 input[type="text"] {
   width: 200px;
   height: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  padding: 8px;
 }
 
 th,
@@ -28,4 +31,12 @@ td {
 
 .table {
   text-align: left;
+}
+
+body {
+  padding: 10px;
+}
+
+footer {
+  margin-top: 20px;
 }
