@@ -5,6 +5,7 @@ header {
   border-style: solid;
   border-color: red;
   border-width: 1px;
+  border-radius: 8px;
   width: 250px;
 }
 input[type="text"] {
