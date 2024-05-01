@@ -57,6 +57,10 @@ export class ProductPageComponent {
   router = inject(Router);
 
   onView(product: Product): void {
-    this.router.navigate(['product', product.id]);
+    this.router.navigate(['product', 'view', product.id]);
+  }
+
+  onEdit(product: Product): void {
+    this.router.navigate(['product', 'form', product.id]);
   }
 }
