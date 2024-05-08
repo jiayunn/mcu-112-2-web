@@ -42,4 +42,8 @@ export class ProductPageComponent implements OnInit {
     });
     this.productService.add(product);
   }
+
+  onRemove({ id }: Product): void {
+    this.productService.remove(id);
+  }
 }
