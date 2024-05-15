@@ -55,20 +55,20 @@ export class ProductService {
   }
 
   getList(): Observable<Product[]> {
-    return of(this._data).pipe(delay(2000));
+    return of(this._data);
   }
 
   add(product: Product): Observable<Product> {
     const id = this._data.length === 0 ? 1 : Math.max(...this._data.map(({ id }) => id)) + 1;
     const newProduct = new Product({ ...product, id });
-    this._data.push(newProduct);
+    this._data = [...this._data, newProduct];
     return of(newProduct);
   }
 
   remove(productId: number): Observable<Product> {
-    const index = this._data.findIndex(({ id }) => productId === id);
-    const product = this._data.splice(index, 1);
-    return of(product[0]);
+    const product = this._data.find(({ id }) => productId === id)!;
+    this._data = [...this._data.filter(({ id }) => productId !== id)];
+    return of(product);
   }
 
   update(product: Product): Observable<Product> {
