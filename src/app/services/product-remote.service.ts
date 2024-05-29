@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product';
@@ -12,8 +12,11 @@ export class ProductRemoteService extends ProductService {
 
   private readonly httpClient = inject(HttpClient);
 
-  override getList(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.url);
+  override getList(name: string | undefined, pageIndex: number, pageSize: number): Observable<Product[]> {
+    const query: { [key: string]: string | number } = { _page: pageIndex, _limit: pageSize };
+    if (name !== undefined) query['name'] = name;
+    const params = new HttpParams({ fromObject: query });
+    return this.httpClient.get<Product[]>(this.url, { params });
   }
 
   override getById(productId: number): Observable<Product> {
