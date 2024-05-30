@@ -7,6 +7,9 @@
 </div>
 <app-product-card-list
   [products]="(products$ |async) || []"
+  [totalCount]="(totalCount$ | async) || 0"
+  [(pageIndex)]="pageIndex"
+  [pageSize]="pageSize"
   (edit)="onEdit($event)"
   (view)="onView($event)"
   (remove)="onRemove($event)"
